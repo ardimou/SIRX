@@ -13,6 +13,7 @@ The typical compartmental SIR model explains procedures like infection (with rat
   <figcaption>Figure 1: The model</figcaption>
   <br>
 </figure>
+
 ## Our work
 
 We expand Brockmann's work, by applying the model in more countries/provinces than in the original paper. We find the parameters kappa and kappa0 that best fit the real data of confirmed cases by solving numerically the differential equations of the model with RK4, using a part of Brockmann's code. Then we use the values of the parameters to create stochastic Monte Carlo simulations in different theoretical network models, and compare them with the ODEs and the real data.
