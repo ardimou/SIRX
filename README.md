@@ -11,6 +11,7 @@ The typical compartmental SIR model explains procedures like infection (with rat
 <figure>
   <img src="./images/1.jpg" alt="1">
   <figcaption>Figure 1: The model</figcaption>
+  <br>
 </figure>
 ## Our work
 
@@ -19,8 +20,8 @@ We expand Brockmann's work, by applying the model in more countries/provinces th
 <figure>
   <img src="./images/2.jpg" alt="2">
   <figcaption>Figure 2: Number of quarantined, X, individuals over time. Comparison between simulation (blue dots), best numerical fit(black lines) and real data (red dots) for different countries</figcaption>
+  <br>
 </figure>
-
 
 The real data of the confirmed cases used in this project, are located in
 
