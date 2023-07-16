@@ -1,4 +1,4 @@
-# Numerical, Monte Carlo
+# Numerical solution, Monte Carlo simulations of the SIRX model
 
 This project compares numerical solutions, stochastic Monte Carlo simulations and real data utilizing SIRX (Susceptible, Infected, Recovered, X: Quarantined) model, which introduces the state X. The model is implemented in:
 
