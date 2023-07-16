@@ -1,6 +1,6 @@
 # Numerical, Monte Carlo
 
-This project compares numerical solutions, stochastic Monte Carlo simulations and real data utilizing SIRX (Susceptible, Infected, Recovered, X: Confirmed Cases) model, which introduces the state X. The model is implemented in:
+This project compares numerical solutions, stochastic Monte Carlo simulations and real data utilizing SIRX (Susceptible, Infected, Recovered, X: Quarantined) model, which introduces the state X. The model is implemented in:
 
 https://www.science.org/doi/full/10.1126/science.abb4557
 
@@ -13,6 +13,11 @@ The typical compartmental SIR model explains procedures like infection (with rat
 ## Our work
 
 We expand Brockmann's work, by applying the model in more countries/provinces than in the original paper. We find the parameters kappa and kappa0 that best fit the real data of confirmed cases by solving numerically the differential equations of the model with RK4, using a part of Brockmann's code. Then we use the values of the parameters to create stochastic Monte Carlo simulations in different theoretical network models, and compare them with the ODEs and the real data.
+
+<figure>
+  <img src="./images/2.jpg" alt="2">
+  <figcaption> Number of quarantined, X, individuals over time. Comparison between simulation (blue dots), best numerical fit(black lines) and real data (red dots) for different countries</figcaption>
+</figure>
 
 The real data of the confirmed cases used in this project, are located in
 
