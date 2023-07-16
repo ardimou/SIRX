@@ -10,9 +10,9 @@ class SIRXConfirmedModel:
         pass
 
 
-    # set equation of motion for SIRX dynaics
+    # set equation of motion for SIRX dynamics
     def dxdt(self,t,y,eta,rho,kappa,kappa0):
-
+    
         S = y[0]
         I = y[1]
         X = y[2]
@@ -29,10 +29,8 @@ class SIRXConfirmedModel:
         return dy
 
     def SIRX(self,t, y0, eta, rho, kappa, kappa0, N, I0_factor):
-    #def SIRX(self,t, y0, eta, rho, kappa, kappa0, N):
-
+        #provides the numerical solution of SIRX
         X0 = y0 / N
-        #I0_factor = 3
         I0 = X0 * I0_factor
         S0 = 1-X0-I0
         y0 = np.array([S0, I0, X0, 0.0])
@@ -66,18 +64,16 @@ class SIRXConfirmedModel:
         return result
 
     def residual(self, params, x, data):
-
+        #residual the numerical solution minus the values of the real data
         eta = params['eta']
         rho = params['rho']
         kappa = params['kappa']
         kappa0 = params['kappa0']
         I0_factor = params['I0_factor']
-        #N = 10**params['log10N']
+        
         N = params['N']
 
         result = self.SIRX(x, data[0], eta, rho, kappa, kappa0, N, I0_factor)
-        #result = self.SIRX(x, data[0], eta, rho, kappa, kappa0, N)
-        #Xtot = np.cumsum(result[2,:])
         X = result[2,:]
         
         residual = X*N - data
@@ -85,10 +81,10 @@ class SIRXConfirmedModel:
         return residual
 
     def fit(self,t, data,maxfev,params=None,N=None,Nmax=None,method='leastsq'):
+        #used to minimize the residual function
         R0 = 6.2
         rho = 1/8
         eta = R0*rho
-#        I0_factor = 3
 
         if params is None:
             params = Parameters()
@@ -119,11 +115,10 @@ class SIRXConfirmedModel:
     
     
     def fitparam(self, direction):
-        #days = 150
-        
+        #finding the parameters that fit best to our model
         with open(direction, 'rb') as handle:
             mydata = pickle.load(handle)
-        #country = 'Bosnia'
+        
         model = SIRXConfirmedModel()
 
         paramDict = {i:{} for i in mydata}
