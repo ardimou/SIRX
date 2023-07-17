@@ -28,4 +28,4 @@ The real data of the confirmed cases used in this project, are located in
 
 https://www.thelancet.com/journals/laninf/article/PIIS1473-3099(20)30120-1/fulltext
 
-If you use this code or find the models relevant to your research, please cite our work https://www.mdpi.com/1099-4300/24/8/1069 where we present our results in detail.
+If you use this code or find the models relevant to your research, please cite our work https://www.sciencedirect.com/science/article/pii/S0378437121009456 where we present our results in detail.
